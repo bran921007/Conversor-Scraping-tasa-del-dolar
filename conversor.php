@@ -7,10 +7,10 @@ if($_POST)
 	$moneda1 = $_POST['txtOpcion1'];
 	$moneda2 = $_POST['txtOpcion2'];
 	$valor = $_POST['txtCantidad'];
-	$resultado= conversor_monedas($moneda1, $moneda2, $valor)." ".$moneda2;
-	file_get_contents("http://adamix.net/practica/?m=web-grupo1&t=9&e=2012-1147&op={$valor}{$moneda1}={$resultado}{$moneda2}");
+	$resultado= currencyConversor($moneda1, $moneda2, $valor)." ".$moneda2;
+	file_get_contents("http://adamix.net/practica/?m=web-grupo1&t=9&e=0000-0000&op={$valor}{$moneda1}={$resultado}{$moneda2}");
 }
-function conversor_monedas($moneda_origen,$moneda_destino,$cantidad) {
+function currencyConversor($moneda_origen,$moneda_destino,$cantidad) {
     $get = file_get_contents("https://www.google.com/finance/converter?a=$cantidad&from=$moneda_origen&to=$moneda_destino");
     $get = explode("<span class=bld>",$get);
     $get = explode("</span>",$get[1]);  
