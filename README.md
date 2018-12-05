@@ -1,1 +1,1 @@
-ECHO est  activado.
+Project Scrapper -  USD Currency conversor
